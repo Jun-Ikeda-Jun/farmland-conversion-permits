@@ -1,0 +1,1001 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>農地転用 着工前レイヤー台帳｜農地転用許可（4条・5条）はどこまで公表されているか</title>
+<meta name="description" content="全国の農業委員会・都道府県が公表している農地転用許可（農地法4条・5条）の資料を、商圏（都道府県）別に整理。個別の許可案件の一覧が公表されているか、所在地番・転用目的・許可年月日まで載るかを事実だけで一覧にしました。現在47件の公表を掲載。">
+<meta name="robots" content="index,follow">
+<style>
+:root{--bg:#f4f7f2;--panel:#fff;--ink:#1b2a1f;--sub:#5d7263;--ac:#3f7d41;--ac2:#245127;--warn:#a8620d;--line:#dde6da}
+@media(prefers-color-scheme:dark){:root{--bg:#0b120c;--panel:#141d15;--ink:#dfe9e0;--sub:#95a897;--ac:#69b06c;--ac2:#20431f;--line:#22301f}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(135deg,var(--ac2),#0d2610);color:#fff;padding:30px 0 26px}
+h1{margin:0;font-size:22px;line-height:1.4}
+.tag{opacity:.9;margin-top:8px;font-size:13.5px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.stats span{background:rgba(255,255,255,.14);border-radius:20px;padding:4px 12px;font-size:12.5px}
+.note{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ac);border-radius:8px;padding:12px 14px;margin:18px 0;font-size:13px;color:var(--sub)}
+.layers{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+.ly{flex:1 1 200px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:12.5px;color:var(--sub)}
+.ly b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:2px}
+.ly.hi{border-color:var(--ac)}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0 8px;border-bottom:1px solid var(--line)}
+.tools input{width:100%;padding:10px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.fils{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.fils button{border:1px solid var(--line);background:var(--panel);color:var(--sub);border-radius:16px;padding:5px 11px;font-size:12.5px;cursor:pointer}
+.fils button.sel{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700}
+main{padding:6px 0 50px}
+.hit{font-size:12.5px;color:var(--sub);margin:10px 2px}
+.c{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.c h3{margin:0;font-size:17px}
+.kind{font-size:11px;font-weight:600;color:var(--sub);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:7px;vertical-align:2px}
+.sub{font-size:12px;color:var(--sub);margin-top:2px}
+.rk{flex:0 0 84px;text-align:center;border:1px solid var(--line);border-radius:9px;padding:4px 0;line-height:1.25}
+.rk b{display:block;font-size:19px}.rk span{font-size:10.5px;color:var(--sub)}
+.rkA{border-color:var(--ac)}.rkA b{color:var(--ac)}.rkB b{color:var(--warn)}.rkC b{color:var(--sub)}
+.ln{margin:9px 0 8px;font-size:14px;font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--sub)}
+.facts b{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chip{font-size:11.5px;color:var(--sub);border:1px solid var(--line);border-radius:14px;padding:2px 9px}
+.chip.on{color:var(--ink);border-color:var(--ac)}
+.chip i{font-style:normal;margin-right:4px;font-weight:700}
+.y{color:var(--ac)}.n{color:var(--sub)}.u{color:var(--sub)}
+.rels{margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
+.rt{font-size:12px;color:var(--sub);margin-bottom:4px}
+.rels ul{list-style:none;margin:0;padding:0}
+.rels li{font-size:13px;padding:3px 0;display:flex;justify-content:space-between;gap:10px}
+.rels a{color:var(--ac);text-decoration:none;font-weight:600}
+.rels .fm{color:var(--sub);font-size:11.5px;white-space:nowrap}
+.rels .more{color:var(--sub);font-size:12px}
+.ft{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line);font-size:12px;color:var(--sub);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.ft a{color:var(--ac);font-weight:700;text-decoration:none}
+h2{font-size:17px;margin:34px 0 8px}
+.refs{list-style:none;padding:0;margin:0}
+.refs li{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px 13px;margin:7px 0;font-size:13.5px}
+.refs a{color:var(--ac);text-decoration:none;font-weight:600}
+.refs .s{display:block;font-size:11.5px;color:var(--sub);margin-top:2px}
+.legend{font-size:12.5px;color:var(--sub);background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:12px 14px}
+.legend p{margin:0 0 8px}.legend p:last-child{margin:0}
+.legend b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:12px;color:var(--sub)}
+@media(max-width:520px){h1{font-size:19px}.facts{gap:3px 10px}.rk{flex:0 0 74px}}
+</style></head><body>
+<header><div class="wrap">
+<h1>農地転用 着工前レイヤー台帳</h1>
+<div class="tag">全国の農業委員会・都道府県が公表している農地転用許可（4条・5条）の資料を、商圏（都道府県）別に整理。許可済み案件が「所在地番・転用目的・許可年月日まで追えるかどうか」を事実だけで一覧にしました。</div>
+<div class="stats"><span>掲載 47件の公表</span><span>個別案件の一覧を確認 0件</span><span>所在の記載を確認 2件</span><span>公表ファイル 262本</span><span>27都道府県</span><span>2026-08-20時点</span></div>
+</div></header>
+
+<div class="wrap">
+<div class="note">農地転用の許可が下りてから実際に工事が始まるまでには、間があきます。農地法第51条により、許可を受けた者が事業計画どおりに事業を行わない場合は許可の取消し等の対象となり得るため、多くの自治体が「許可後おおむね3年以内の着手」を目安として案内しています（運用は自治体により異なります）。つまり許可済みで未着工の区画は、いずれ必ず誰かが動きます。この台帳は、その手前の情報である『農地転用許可の公表』が、どの農業委員会・都道府県で・どの粒度まで（案件一覧か／件数だけか、所在地番は載るか、転用目的は載るか）公表されているかを整理し、出典ページへ直接リンクします。掲載するのは公表状況という事実と公式URLだけで、許可案件の中身（申請者名・個々の地番など）は転載しません。</div>
+
+<div class="layers">
+  <div class="ly hi"><b>① 農地転用許可の案件一覧</b>個別の許可案件が行単位で並ぶ層。所在・転用目的まで載ることがある、いちばん手前の情報。</div>
+  <div class="ly hi"><b>② 農業委員会 総会の議案・議事録</b>4条・5条の審議が載る層。許可の前後どちらも追える。</div>
+  <div class="ly"><b>③ 件数・面積の統計</b>集計だけの層。どの区画かは分からない。</div>
+</div>
+
+<div class="tools">
+  <input id="q" type="search" placeholder="市町村名・都道府県・組織名で絞り込む（例: 千葉 / 農業委員会）" autocomplete="off">
+  <div class="fils" id="fb">
+    <button class="sel" data-v="">地域すべて</button>
+    <button data-v="北海道・東北">北海道・東北 9</button><button data-v="関東">関東 9</button><button data-v="中部・北陸">中部・北陸 9</button><button data-v="近畿">近畿 5</button><button data-v="中国・四国">中国・四国 2</button><button data-v="九州・沖縄">九州・沖縄 8</button><button data-v="全国">全国 4</button>
+  </div>
+  <div class="fils" id="fd">
+    <button class="sel" data-v="">資料すべて</button>
+    <button data-v="総会議案">総会議案 10</button><button data-v="統計">統計 1</button><button data-v="地図情報">地図情報 5</button><button data-v="制度案内">制度案内 31</button>
+  </div>
+  <div class="fils" id="fr">
+    <button class="sel" data-v="">追える度すべて</button>
+    <button data-v="B">B 審議・処分の記録まで届く 11</button><button data-v="C">C 制度案内・統計どまり 36</button>
+  </div>
+</div>
+
+<main>
+<div class="hit" id="hit">47件</div>
+<article class="c" data-block="北海道・東北" data-doc="総会議案" data-rank="B" data-name="横手市農業委員会秋田県総会議案不明市区町村">
+  <div class="ch">
+    <div><h3>横手市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 秋田県</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年度</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（12本を確認）</div><ul><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r080316.pdf" target="_blank" rel="noopener">2026年3月｜第12回総会議事録（令和8年3月16日開催）</a><span class="fm">PDF 0.4MB</span></li><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r080216.pdf" target="_blank" rel="noopener">2026年2月｜第11回総会議事録（令和8年2月16日開催）</a><span class="fm">PDF 0.37MB</span></li><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r08011502.pdf" target="_blank" rel="noopener">2026年1月｜第10回総会議事録（令和8年1月15日開催）</a><span class="fm">PDF 0.39MB</span></li><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r071216.pdf" target="_blank" rel="noopener">2025年12月｜第9回総会議事録（令和7年12月16日開催）</a><span class="fm">PDF 0.47MB</span></li><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r071114.pdf" target="_blank" rel="noopener">2025年11月｜第8回総会議事録（令和7年11月14日開催）</a><span class="fm">PDF 0.61MB</span></li><li><a href="https://www.city.yokote.lg.jp/_res/projects/default_project/_page_/001/011/843/r071015-2.pdf" target="_blank" rel="noopener">2025年10月｜第7回総会議事録（令和7年10月15日開催）</a><span class="fm">PDF 0.7MB</span></li><li class="more">ほか 6件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-03-30 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.yokote.lg.jp/shisei/1001171/1009950/1003533/1011843.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="総会議案" data-rank="B" data-name="那珂川市農業委員会福岡県総会議案不明市区町村">
+  <div class="ch">
+    <div><h3>那珂川市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 福岡県</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年度</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（14本を確認）</div><ul><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/32607.pdf" target="_blank" rel="noopener">2026年度｜令和8年度 第1回農業委員会総会</a><span class="fm">PDF 0.31MB</span></li><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/32921.pdf" target="_blank" rel="noopener">2026年度｜令和8年度 第2回農業委員会総会</a><span class="fm">PDF 0.24MB</span></li><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/33211.pdf" target="_blank" rel="noopener">2026年度｜令和8年度 第3回農業委員会総会</a><span class="fm">PDF 0.27MB</span></li><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/33436.pdf" target="_blank" rel="noopener">2026年度｜令和8年度 第4回農業委員会総会</a><span class="fm">PDF 0.26MB</span></li><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/32477.pdf" target="_blank" rel="noopener">2025年度｜令和7年度 第1回農業委員会総会</a><span class="fm">PDF 0.32MB</span></li><li><a href="https://www.city.nakagawa.lg.jp/uploaded/attachment/32478.pdf" target="_blank" rel="noopener">2025年度｜令和7年度 第2回農業委員会総会</a><span class="fm">PDF 0.38MB</span></li><li class="more">ほか 8件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-08-12 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.nakagawa.lg.jp/soshiki/21/kaigiroku.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="総会議案" data-rank="B" data-name="嘉島町農業委員会熊本県総会議案不明市区町村">
+  <div class="ch">
+    <div><h3>嘉島町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 熊本県</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年8月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（6本を確認）</div><ul><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=44529_filelib_718b6e603b8e5546f510d81dc1fc715a.pdf" target="_blank" rel="noopener">2026年8月｜令和8年8月 総会議事録</a><span class="fm">PDF 0.27MB</span></li><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=44240_filelib_5f005550e410e3c55d08a4d45367f3e8.pdf" target="_blank" rel="noopener">2026年7月｜令和8年7月 総会議事録</a><span class="fm">PDF 0.25MB</span></li><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=43562_filelib_6af6ad573de6c61e90c9f09772872d65.pdf" target="_blank" rel="noopener">2026年6月｜令和8年6月 総会議事録</a><span class="fm">PDF 0.18MB</span></li><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=43250_filelib_03a63ff4fa701a52016a66b7b7be8772.pdf" target="_blank" rel="noopener">2026年5月｜令和8年5月 総会議事録</a><span class="fm">PDF 0.2MB</span></li><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=42779_filelib_4fc6a844e230ea2fbb3a320d26461b37.pdf" target="_blank" rel="noopener">2026年4月｜令和8年4月 総会議事録</a><span class="fm">PDF 0.21MB</span></li><li><a href="https://www.town.kumamoto-kashima.lg.jp/dl?q=42778_filelib_04a500b02d4328fb229668e9f2bf74c7.pdf" target="_blank" rel="noopener">不明｜総会議事録（月不明・リンク文字列なし）</a><span class="fm">PDF</span></li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-08-10 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.kumamoto-kashima.lg.jp/q/aview/176/5813.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="総会議案" data-rank="B" data-name="札幌市農業委員会北海道総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>札幌市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 北海道 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年8月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（21本を確認）</div><ul><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku260618.pdf" target="_blank" rel="noopener">2026年6月｜第14期第36回札幌市農業委員会総会（令和8年6月18日）</a><span class="fm">PDF 0.21MB</span></li><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku080624.pdf" target="_blank" rel="noopener">2026年6月｜第15期第1回札幌市農業委員会総会（令和8年6月24日）</a><span class="fm">PDF 0.21MB</span></li><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku_080525.pdf" target="_blank" rel="noopener">2026年5月｜第14期第35回札幌市農業委員会総会（令和8年5月25日）</a><span class="fm">PDF 0.29MB</span></li><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku_080423.pdf" target="_blank" rel="noopener">2026年4月｜第14期第34回札幌市農業委員会総会（令和8年4月23日）</a><span class="fm">PDF 0.57MB</span></li><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku_080325_1.pdf" target="_blank" rel="noopener">2026年3月｜第14期第33回札幌市農業委員会総会（令和8年3月25日）</a><span class="fm">PDF 0.39MB</span></li><li><a href="https://www.city.sapporo.jp/keizai/nogyo/noui/documents/gijiroku_080205.pdf" target="_blank" rel="noopener">2026年2月｜第14期第31回札幌市農業委員会総会（令和8年2月5日）</a><span class="fm">PDF 0.35MB</span></li><li class="more">ほか 15件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-07-29 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.sapporo.jp/keizai/nogyo/noui/soukai.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="総会議案" data-rank="B" data-name="新城市農業委員会愛知県総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>新城市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 愛知県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年7月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（28本を確認）</div><ul><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/34_8.7.24.pdf" target="_blank" rel="noopener">2026年7月｜第34回 総会議案（令和8年7月24日）</a><span class="fm">PDF 0.39MB</span></li><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/33_8.6.25.pdf" target="_blank" rel="noopener">2026年6月｜第33回 総会議案（令和8年6月25日）</a><span class="fm">PDF 0.36MB</span></li><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/32_8.5.26.pdf" target="_blank" rel="noopener">2026年5月｜第32回 総会議案（令和8年5月26日）</a><span class="fm">PDF 0.4MB</span></li><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/31_8.4.28.pdf" target="_blank" rel="noopener">2026年4月｜第31回 総会議案（令和8年4月28日）</a><span class="fm">PDF 0.49MB</span></li><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/30_8.3.26.pdf" target="_blank" rel="noopener">2026年3月｜第30回 令和8年3月26日 農業委員会総会議事録</a><span class="fm">PDF 0.5MB</span></li><li><a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.files/r8.2gijiroku.pdf" target="_blank" rel="noopener">2026年2月｜第29回 令和8年2月25日 農業委員会総会議事録</a><span class="fm">PDF 0.35MB</span></li><li class="more">ほか 22件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-08-05 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.shinshiro.lg.jp/sangyo/nogyo-ringyo/nogyo-iinkai/gijiroku.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="総会議案" data-rank="B" data-name="熊谷市農業委員会埼玉県総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>熊谷市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 埼玉県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年6月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（28本を確認）</div><ul><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/3-23rdgeneralassembly.pdf" target="_blank" rel="noopener">2026年6月｜第23回総会議事録（令和8年6月29日）</a><span class="fm">PDF 0.32MB</span></li><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/22ndgeneralassembly.pdf" target="_blank" rel="noopener">2026年5月｜第22回総会議事録（令和8年5月28日）</a><span class="fm">PDF 0.32MB</span></li><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/21stgeneralassembly3rd.pdf" target="_blank" rel="noopener">2026年4月｜第21回総会議事録（令和8年4月28日）</a><span class="fm">PDF 0.32MB</span></li><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/20thgeneralassembly3rd.pdf" target="_blank" rel="noopener">2026年3月｜第20回総会議事録（令和8年3月27日）</a><span class="fm">PDF 0.28MB</span></li><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/3rdcommittee19thgeneralassembly.pdf" target="_blank" rel="noopener">2026年2月｜第19回総会議事録（令和8年2月27日）</a><span class="fm">PDF 0.26MB</span></li><li><a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.files/18thgeneralassembly.pdf" target="_blank" rel="noopener">2026年1月｜第18回総会議事録（令和8年1月28日）</a><span class="fm">PDF 0.34MB</span></li><li class="more">ほか 22件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-07-31 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.kumagaya.lg.jp/about/soshiki/nogyo/nougyoiinkai/gijiroku/nouseibukaigijiroku.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="総会議案" data-rank="B" data-name="豊田市農業委員会愛知県総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>豊田市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 愛知県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年4月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（28本を確認）</div><ul><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r080427.pdf" target="_blank" rel="noopener">2026年4月｜令和8年4月27日 総会議事録</a><span class="fm">PDF 0.23MB</span></li><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r080326.pdf" target="_blank" rel="noopener">2026年3月｜令和8年3月26日 総会議事録</a><span class="fm">PDF 0.26MB</span></li><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r080224.pdf" target="_blank" rel="noopener">2026年2月｜令和8年2月24日 総会議事録</a><span class="fm">PDF 0.23MB</span></li><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r080127.pdf" target="_blank" rel="noopener">2026年1月｜令和8年1月27日 総会議事録</a><span class="fm">PDF 0.31MB</span></li><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r071224.pdf" target="_blank" rel="noopener">2025年12月｜令和7年12月24日 総会議事録</a><span class="fm">PDF 0.25MB</span></li><li><a href="https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/003/883/r071125.pdf" target="_blank" rel="noopener">2025年11月｜令和7年11月25日 総会議事録</a><span class="fm">PDF 0.31MB</span></li><li class="more">ほか 22件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2026-08-13 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.toyota.aichi.jp/sangyo/nogyo/1073314/iinkai/1003883.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="総会議案" data-rank="B" data-name="寒川町農業委員会神奈川県総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>寒川町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 神奈川県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2024年12月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（106本を確認）</div><ul><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r412gijiroku.pdf" target="_blank" rel="noopener">2022年12月｜令和4年第12回定例総会議事録</a><span class="fm">PDF 0.19MB</span></li><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r411gijiroku.pdf" target="_blank" rel="noopener">2022年11月｜令和4年第11回定例総会議事録</a><span class="fm">PDF 0.19MB</span></li><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r410gijiroku.pdf" target="_blank" rel="noopener">2022年10月｜令和4年第10回定例総会議事録</a><span class="fm">PDF 0.2MB</span></li><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r409gijiroku.pdf" target="_blank" rel="noopener">2022年9月｜令和4年第9回定例総会議事録</a><span class="fm">PDF 0.16MB</span></li><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r408gijiroku.pdf" target="_blank" rel="noopener">2022年8月｜令和4年第8回定例総会議事録</a><span class="fm">PDF 0.19MB</span></li><li><a href="https://www.town.samukawa.kanagawa.jp/material/files/group/24/r407gijiroku.pdf" target="_blank" rel="noopener">2022年7月｜令和4年第7回定例総会議事録</a><span class="fm">PDF 0.2MB</span></li><li class="more">ほか 100件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2025-05-13 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.samukawa.kanagawa.jp/soshiki/nogyo/nogyojimu/somu/info/iinkai/gijiroku/18025.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="近畿" data-doc="総会議案" data-rank="B" data-name="天理市農業委員会奈良県総会議案4条・5条市区町村">
+  <div class="ch">
+    <div><h3>天理市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">近畿 ｜ 奈良県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 6/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2024年3月</b></span>
+    
+    <span>更新の頻度: <b>月次</b></span>
+    <span>形式: <b>Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip on"><i class="y">✓</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip on"><i class="y">✓</i>月次で更新</span></div>
+  <div class="rels"><div class="rt">このページで公表されている資料（19本を確認）</div><ul><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/060306gijiroku.docx" target="_blank" rel="noopener">2024年3月｜令和6年3月 農業委員会議事録（令和6年3月6日開催）</a><span class="fm">Word 0.03MB</span></li><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/060208gijiroku.docx" target="_blank" rel="noopener">2024年2月｜令和6年2月 農業委員会総会議事録（令和6年2月8日開催）</a><span class="fm">Word 0.03MB</span></li><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/060109gijiroku.docx" target="_blank" rel="noopener">2024年1月｜令和6年1月 農業委員会総会議事録（令和6年1月9日開催）</a><span class="fm">Word 0.03MB</span></li><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/051207gijiroku.docx" target="_blank" rel="noopener">2023年12月｜令和5年12月 農業委員会総会議事録（令和5年12月7日開催）</a><span class="fm">Word 0.03MB</span></li><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/051108gijiroku.docx" target="_blank" rel="noopener">2023年11月｜令和5年11月 農業委員会議事録（令和5年11月8日開催）</a><span class="fm">Word 0.03MB</span></li><li><a href="https://www.city.tenri.nara.jp/material/files/group/45/051006gijiroku.docx" target="_blank" rel="noopener">2023年10月｜令和5年10月 農業委員会議事録（令和5年10月6日開催）</a><span class="fm">Word 0.03MB</span></li><li class="more">ほか 13件（出典ページに掲載）</li></ul></div>
+  <div class="ft"><span>ページ最終更新: 2024-05-23 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.tenri.nara.jp/kakuka/gyousei_iinkai/nougyouiinkaijimukyoku/gijiroku/10129.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="全国" data-doc="地図情報" data-rank="B" data-name="農林水産省全国地図情報不明国・全国">
+  <div class="ch">
+    <div><h3>農林水産省<span class="kind">国・全国</span></h3>
+      <div class="sub">全国</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 4/14</span></div>
+  </div>
+  <div class="ln">農地の地図・台帳情報（農地ナビ等）への導線</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2022年3月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>地図情報（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip on"><i class="y">✓</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip on"><i class="y">✓</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://map.maff.go.jp/Doc/Explanation" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="地図情報" data-rank="B" data-name="旭川市農業委員会北海道地図情報不明市区町村">
+  <div class="ch">
+    <div><h3>旭川市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 北海道</div></div>
+    <div class="rk rkB"><b>B</b><span>追える度 4/14</span></div>
+  </div>
+  <div class="ln">農地の地図・台帳情報（農地ナビ等）への導線</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2015年4月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>地図情報（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip on"><i class="y">✓</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip on"><i class="y">✓</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2025-01-21 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.asahikawa.hokkaido.jp/kurashi/364/374/392/daichou.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="総会議案" data-rank="C" data-name="宮代町農業委員会埼玉県総会議案5条市区町村">
+  <div class="ch">
+    <div><h3>宮代町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 埼玉県 ｜ 農地法 5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 3/14</span></div>
+  </div>
+  <div class="ln">農業委員会 総会の議案・議事録（4条・5条の審議）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年5月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>総会議案（3点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-07-03 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.miyashiro.lg.jp/0000026497.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="全国" data-doc="統計" data-rank="C" data-name="農林水産省全国統計4条・5条国・全国">
+  <div class="ch">
+    <div><h3>農林水産省<span class="kind">国・全国</span></h3>
+      <div class="sub">全国 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 2/14</span></div>
+  </div>
+  <div class="ln">農地転用許可の件数・面積などの統計</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>年度</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>統計（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip on"><i class="y">✓</i>面積の記載</span><span class="chip off"><i class="n">−</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://data.e-gov.go.jp/data/dataset/maff_20220328_0058" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="地図情報" data-rank="C" data-name="益城町熊本県地図情報不明市区町村">
+  <div class="ch">
+    <div><h3>益城町<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 熊本県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 1/14</span></div>
+  </div>
+  <div class="ln">農地の地図・台帳情報（農地ナビ等）への導線</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>地図情報（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2023-10-20 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.mashiki.lg.jp/kiji0036110/index.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="近畿" data-doc="地図情報" data-rank="C" data-name="加古川市農業委員会兵庫県地図情報不明市区町村">
+  <div class="ch">
+    <div><h3>加古川市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">近畿 ｜ 兵庫県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 1/14</span></div>
+  </div>
+  <div class="ln">農地の地図・台帳情報（農地ナビ等）への導線</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>地図情報（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2023-06-22 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.kakogawa.lg.jp/soshikikarasagasu/nogyoiinkaijimukyoku/07sonota/0701etsuran.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="地図情報" data-rank="C" data-name="松戸市農業委員会千葉県地図情報不明市区町村">
+  <div class="ch">
+    <div><h3>松戸市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 千葉県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 1/14</span></div>
+  </div>
+  <div class="ln">農地の地図・台帳情報（農地ナビ等）への導線</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年度</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel/PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>地図情報（1点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-07-01 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.matsudo.chiba.jp/jigyosya/nougyou/nougyouiinkai/noutidaityou.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="全国" data-doc="制度案内" data-rank="C" data-name="農林水産省全国制度案内不明国・全国">
+  <div class="ch">
+    <div><h3>農林水産省<span class="kind">国・全国</span></h3>
+      <div class="sub">全国</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 1/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年5月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip on"><i class="y">✓</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-05-27 ／ 収集: 2026-08-20</span>
+    <a href="https://www.maff.go.jp/j/nousin/noukei/totiriyo/nouchi_tenyo.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="制度案内" data-rank="C" data-name="神奈川県神奈川県制度案内不明都道府県">
+  <div class="ch">
+    <div><h3>神奈川県<span class="kind">都道府県</span></h3>
+      <div class="sub">関東 ｜ 神奈川県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 1/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2024年8月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip on"><i class="y">✓</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-06-12 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.kanagawa.jp/docs/n8f/tenyou/einougatahatsuden.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="いわき市農業委員会福島県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>いわき市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 福島県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel/Word/PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-03-31 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.iwaki.lg.jp/www/contents/1001000001046/index.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="その他" data-doc="制度案内" data-rank="C" data-name="横浜市農業委員会不明制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>横浜市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">その他 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-04-01 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/nochi/tetsuzuki/nogyo/45jyou.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="岡崎市農業委員会愛知県制度案内5条市区町村">
+  <div class="ch">
+    <div><h3>岡崎市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 愛知県 ｜ 農地法 5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-06-30 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.okazaki.lg.jp/business/sangyo/1005302/1005352/1005357.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="制度案内" data-rank="C" data-name="御船町熊本県制度案内不明市区町村">
+  <div class="ch">
+    <div><h3>御船町<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 熊本県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2025-09-10 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.mifune.kumamoto.jp/page7829.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中国・四国" data-doc="制度案内" data-rank="C" data-name="広島県広島県制度案内5条都道府県">
+  <div class="ch">
+    <div><h3>広島県<span class="kind">都道府県</span></h3>
+      <div class="sub">中国・四国 ｜ 広島県 ｜ 農地法 5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.hiroshima.lg.jp/site/nochiho/1170750225911.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="制度案内" data-rank="C" data-name="佐賀市農業委員会佐賀県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>佐賀市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 佐賀県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-06-01 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.saga.lg.jp/sangyo-machizukuri/norinsuisan/1/5/1/4586.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中国・四国" data-doc="制度案内" data-rank="C" data-name="四国中央市農業委員会愛媛県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>四国中央市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中国・四国 ｜ 愛媛県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel/PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-06-22 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.shikokuchuo.ehime.jp/soshiki/38/3886.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="小松市（農業委員会事務局）石川県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>小松市（農業委員会事務局）<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 石川県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip off"><i class="n">−</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip off"><i class="n">−</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-05-14 ／ 収集: 2026-08-20</span>
+    <a href="https://faq1.city.komatsu.lg.jp/faq/detail.aspx?id=1642" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="制度案内" data-rank="C" data-name="松田町農業委員会神奈川県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>松田町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 神奈川県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2023-04-01 ／ 収集: 2026-08-20</span>
+    <a href="https://town.matsuda.kanagawa.jp/soshiki/9/noutenn.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="制度案内" data-rank="C" data-name="西海市農業委員会長崎県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>西海市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 長崎県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-06-10 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.saikai.nagasaki.jp/soshiki/nogyo/1/1/1274.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="仙台市農業委員会宮城県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>仙台市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 宮城県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2024-08-23 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.sendai.jp/nochike/download/bunyabetsu/shigoto/nogyo/tenyo/kijyun.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="村田町農業委員会宮城県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>村田町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 宮城県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel/Word/PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-07-23 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.murata.miyagi.jp/sangyo/nogyoiinkai/tenyo/index.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="滝沢市農業委員会岩手県制度案内5条市区町村">
+  <div class="ch">
+    <div><h3>滝沢市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 岩手県 ｜ 農地法 5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Word/PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2024-08-06 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.takizawa.iwate.jp/life/work/noui/noutitennyou5.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="近畿" data-doc="制度案内" data-rank="C" data-name="朝来市農業委員会（産業振興部農業委員会事務局）兵庫県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>朝来市農業委員会（産業振興部農業委員会事務局）<span class="kind">市区町村</span></h3>
+      <div class="sub">近畿 ｜ 兵庫県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip off"><i class="n">−</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip off"><i class="n">−</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2023-01-06 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.asago.hyogo.jp/soshiki/39/2259.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="制度案内" data-rank="C" data-name="東京都産業労働局東京都制度案内不明都道府県">
+  <div class="ch">
+    <div><h3>東京都産業労働局<span class="kind">都道府県</span></h3>
+      <div class="sub">関東 ｜ 東京都</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.sangyo-rodo.metro.tokyo.lg.jp/nourin/nougyou/other/riyouchousei/" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="福島県福島県制度案内5条都道府県">
+  <div class="ch">
+    <div><h3>福島県<span class="kind">都道府県</span></h3>
+      <div class="sub">北海道・東北 ｜ 福島県 ｜ 農地法 5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip off"><i class="n">−</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip off"><i class="n">−</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2021-03-30 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.fukushima.lg.jp/sec/36021c/nogyo-ninaite09.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="北海道・東北" data-doc="制度案内" data-rank="C" data-name="浪江町農業委員会福島県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>浪江町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">北海道・東北 ｜ 福島県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>不明</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2025-01-06 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.namie.fukushima.jp/soshiki/36/38203.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="制度案内" data-rank="C" data-name="高崎市農業委員会群馬県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>高崎市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 群馬県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2027年1月</b></span>
+    
+    <span>更新の頻度: <b>年度</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip off"><i class="n">−</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-04-30 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.takasaki.gunma.jp/page/5855.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="瑞浪市農業委員会岐阜県制度案内不明市区町村">
+  <div class="ch">
+    <div><h3>瑞浪市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 岐阜県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年度</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.mizunami.lg.jp/1004458/1004586/index.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="八百津町農業委員会岐阜県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>八百津町農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">中部・北陸 ｜ 岐阜県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年度</b></span>
+    
+    <span>更新の頻度: <b>年度</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip off"><i class="n">−</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip off"><i class="n">−</i>面積の記載</span><span class="chip off"><i class="n">−</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-03-27 ／ 収集: 2026-08-20</span>
+    <a href="https://www.town.yaotsu.lg.jp/6706.htm" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="制度案内" data-rank="C" data-name="玉名市農業委員会熊本県制度案内不明市区町村">
+  <div class="ch">
+    <div><h3>玉名市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 熊本県</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年7月</b></span>
+    
+    <span>更新の頻度: <b>不定期</b></span>
+    <span>形式: <b>HTML</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip "><i class="u">?</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip off"><i class="n">−</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.tamana.lg.jp/q/list/379.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="九州・沖縄" data-doc="制度案内" data-rank="C" data-name="小城市農業委員会佐賀県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>小城市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">九州・沖縄 ｜ 佐賀県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年7月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-07-31 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.ogi.lg.jp/main/44864.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="関東" data-doc="制度案内" data-rank="C" data-name="日光市農業委員会栃木県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>日光市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">関東 ｜ 栃木県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2026年5月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word/Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-08-13 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.nikko.lg.jp/soshiki/14/1047/1/406.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="近畿" data-doc="制度案内" data-rank="C" data-name="京田辺市農業委員会京都府制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>京田辺市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">近畿 ｜ 京都府 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2025年5月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Word/PDF/Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.kyotanabe.lg.jp/0000002191.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="新潟県新潟県制度案内4条・5条都道府県">
+  <div class="ch">
+    <div><h3>新潟県<span class="kind">都道府県</span></h3>
+      <div class="sub">中部・北陸 ｜ 新潟県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2024年4月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>Word/PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2025-11-06 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.niigata.lg.jp/sec/nochikanri/1356880151107.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="長野県長野県制度案内4条・5条都道府県">
+  <div class="ch">
+    <div><h3>長野県<span class="kind">都道府県</span></h3>
+      <div class="sub">中部・北陸 ｜ 長野県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2024年4月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip off"><i class="n">−</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip off"><i class="n">−</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-05-28 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.nagano.lg.jp/nosei/sangyo/nogyo/nochiho/tenyo.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="全国" data-doc="制度案内" data-rank="C" data-name="内閣府全国制度案内不明国・全国">
+  <div class="ch">
+    <div><h3>内閣府<span class="kind">国・全国</span></h3>
+      <div class="sub">全国</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2023年11月</b></span>
+    
+    <span>更新の頻度: <b>不定期</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip off"><i class="n">−</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 不明 ／ 収集: 2026-08-20</span>
+    <a href="https://www.cao.go.jp/bunken-suishin/jimukengenijo/past-nouchishitei.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="近畿" data-doc="制度案内" data-rank="C" data-name="大津市農業委員会滋賀県制度案内4条・5条市区町村">
+  <div class="ch">
+    <div><h3>大津市農業委員会<span class="kind">市区町村</span></h3>
+      <div class="sub">近畿 ｜ 滋賀県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2023年4月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF/Word/Excel</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip "><i class="u">?</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip "><i class="u">?</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-04-23 ／ 収集: 2026-08-20</span>
+    <a href="https://www.city.otsu.lg.jp/soshiki/065/2200/s/1422419721420.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article><article class="c" data-block="中部・北陸" data-doc="制度案内" data-rank="C" data-name="愛知県愛知県制度案内4条・5条都道府県">
+  <div class="ch">
+    <div><h3>愛知県<span class="kind">都道府県</span></h3>
+      <div class="sub">中部・北陸 ｜ 愛知県 ｜ 農地法 4条・5条</div></div>
+    <div class="rk rkC"><b>C</b><span>追える度 0/14</span></div>
+  </div>
+  <div class="ln">農地転用許可制度の案内（申請の手引き・着手期限の運用）</div>
+  <div class="facts">
+    <span>本文中の最新の対象期間: <b>2017年4月</b></span>
+    
+    <span>更新の頻度: <b>不明</b></span>
+    <span>形式: <b>PDF</b></span>
+    <span>着手期限の運用の記載: <b>記載なし</b></span>
+  </div>
+  <div class="chips"><span class="chip on"><i class="y">層</i>制度案内（0点）</span><span class="chip "><i class="u">?</i>月次の公表ファイルを3本以上確認</span><span class="chip off"><i class="n">−</i>個別の許可案件が並ぶ一覧を公表</span><span class="chip off"><i class="n">−</i>所在（地番・字）の記載</span><span class="chip "><i class="u">?</i>転用目的（住宅/店舗/資材置場/太陽光）の記載</span><span class="chip off"><i class="n">−</i>許可年月日の記載</span><span class="chip "><i class="u">?</i>面積の記載</span><span class="chip "><i class="u">?</i>月次で更新</span></div>
+  
+  <div class="ft"><span>ページ最終更新: 2026-07-30 ／ 収集: 2026-08-20</span>
+    <a href="https://www.pref.aichi.jp/soshiki/nogyo-shinko/0000067203.html" target="_blank" rel="noopener">出典ページを開く →</a></div>
+</article>
+
+<h2>この表の見かた</h2>
+<div class="legend">
+<p>右上の <b>追える度</b> は、その公表から<b>個別の許可案件にどこまで近づけるか</b>を機械的に点数化したものです（14点満点）。内訳は3つで、どれも実際に確認できた事実だけを数えています。<br>
+① <b>資料の層</b>＝案件一覧 4点／総会議案 3点／統計 1点／地図情報 1点／制度案内 0点。<br>
+② <b>月次の公表ファイルを3本以上確認</b>＝出典ページに並ぶ公表ファイルを実際に3本以上たどれた場合に 2点。<br>
+③ <b>本文で記載を確認できた項目</b>＝個別の許可案件が並ぶ一覧を公表 2点／所在（地番・字）の記載 2点／転用目的（住宅/店舗/資材置場/太陽光）の記載 1点／許可年月日の記載 1点／面積の記載 1点／月次で更新 1点。<br>
+A=8点以上「個別案件まで届く」、B=4〜7点「審議・処分の記録まで届く」、C=3点以下「制度案内・統計どまり」。<b>これは「公表がどこまで届いているか」を数えたものであって、その市町村の転用許可の件数・面積や、工事の規模・時期とは一切関係ありません。点が低いことは、その自治体が公表を怠っているという意味でもありません。</b></p>
+<p><b>✓</b> = 出典ページの本文に記載を確認 ／ <b>−</b> = ないと明記 ／ <b>?</b> = 本文からは確認できず（<b>公表されていないとは限りません</b>）。添付されたPDF・Excelの中身までは開いて確認していません。案件一覧はPDFで配られることが多いため、入口ページだけを見た結果として「?」が並ぶのはふつうです。</p>
+<p><b>着手期限の運用の記載</b>は、その出典ページの本文に「許可後○年以内に着手しないときは…」といった運用上の目安が書かれていた場合に、その年数をそのまま拾ったものです。法律に一律の数値が定められているわけではありません。</p>
+<p>掲載しているのは「何がどこまで公表されているか」という事実と公式URLだけです。<b>許可案件の中身（申請者・地権者の氏名、個々の地番、面積の実数）は取得も転載もしていません。</b>具体的な案件は、必ずリンク先の一次資料と所管の農業委員会でご確認ください。</p>
+</div>
+
+<h2>制度の一次情報</h2>
+<ul class="refs">
+<li><a href="https://www.maff.go.jp/j/nousin/noukei/totiriyo/" target="_blank" rel="noopener">農地転用許可制度 →</a><span class="s">農林水産省</span></li><li><a href="https://elaws.e-gov.go.jp/document?lawid=327AC0200000229" target="_blank" rel="noopener">農地法 →</a><span class="s">e-Gov法令検索</span></li><li><a href="https://elaws.e-gov.go.jp/document?lawid=332CO0000000329" target="_blank" rel="noopener">農地法施行令 →</a><span class="s">e-Gov法令検索</span></li><li><a href="https://map.maff.go.jp/" target="_blank" rel="noopener">eMAFF農地ナビ（農地の地図・台帳情報） →</a><span class="s">農林水産省</span></li><li><a href="https://www.maff.go.jp/j/keiei/koukai/nougyou_iinkai.html" target="_blank" rel="noopener">農業委員会について →</a><span class="s">農林水産省</span></li>
+</ul>
+</main>
+
+<footer>
+<p>本サイトは各農業委員会・都道府県・国が自ら公表しているページを調べ、その公表状況（どの資料が・どの粒度で公表されているか）と公式URLのみを掲載しています。個々の農地転用許可の内容、申請者・地権者の氏名、個別の地番は取得も掲載もしていません。土地の取引・工事の受注をあっせんするものではなく、着工の予定を予測・保証するものでもありません。許可の有無・内容・時期は必ず各公式ページおよび所管の農業委員会でご確認ください。</p>
+<p>農地転用の許可は農地法第4条（自己転用）・第5条（権利移動を伴う転用）に基づきます。許可権者は原則として都道府県知事等で、農業委員会が申請の受付・意見を経由します（4haを超える場合等の取扱いは農地法および同法施行令によります）。許可を受けた者が事業計画に従って事業を行っていないと認められる場合、農地法第51条により許可の取消し・条件変更・原状回復命令等の対象となり得ます。着手期限の目安（例「許可後3年」）は法律に一律の数値として定められたものではなく、各自治体が運用上の目安として案内しているものです。</p>
+<p>このページは静的HTMLです。入力内容はブラウザ内の絞り込みにのみ使われ、どこにも送信されません。会員登録・決済・お問い合わせフォームはありません。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.c')), hit=document.getElementById('hit');
+  var q='', blk='', doc='', rk='';
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(!blk||c.dataset.block===blk)&&(!doc||c.dataset.doc===doc)&&(!rk||c.dataset.rank===rk)&&(!q||c.dataset.name.indexOf(q)>=0);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    hit.textContent=n+'件';
+  }
+  document.getElementById('q').addEventListener('input',function(e){ q=e.target.value.trim(); apply(); });
+  function grp(id,set){
+    var box=document.getElementById(id); if(!box) return;
+    box.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      [].slice.call(box.children).forEach(function(x){ x.classList.remove('sel'); });
+      b.classList.add('sel'); set(b.dataset.v||''); apply();
+    });
+  }
+  grp('fb',function(v){ blk=v; });
+  grp('fd',function(v){ doc=v; });
+  grp('fr',function(v){ rk=v; });
+})();
+</script>
+
+<script data-goatcounter="https://junikeda.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body></html>
